@@ -44,7 +44,8 @@ export class MemStorage implements IStorage {
     const file: PrnFile = { 
       ...insertFile, 
       id,
-      processedAt: new Date()
+      processedAt: new Date(),
+      parseData: insertFile.parseData || null
     };
     this.prnFiles.set(id, file);
     return file;
